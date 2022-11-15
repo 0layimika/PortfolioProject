@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Kayode Ibukunoluwa</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
 
@@ -96,7 +96,7 @@
       <div class="navbar-nav ml-auto">
         <a class="nav-link " aria-current="page" href="http://twitter.com/ibkkkkkkkkkk">Twitter</a>
         <a class="nav-link" href="{% static 'My resume.pdf' %}">Resume</a>
-        <a class="nav-link" href="{% url 'all blogs' %}">Blog</a>
+        <a class="nav-link active" href="{% url 'all blogs' %}">Blog</a>
         <a class="nav-link" href="http://instagram.com/0layimika">Instagram</a>
 
       </div>
@@ -105,44 +105,23 @@
 </nav>
 </header>
 
-<main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Hi, I'm Olayimika</h1>
-        <p class="lead text-muted">My name is Kayode ibukunoluwa and I'm just beginning my journey to being a backend developer. Kindly support!!!</p>
-        <p>
-          <a href="mailto:olakay739@gmail.com" class="btn btn-primary my-2">mail me</a>
-
-        </p>
-          <img src="{% static 'My picture.jpg' %}" height="250" width="300"/>
-      </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
+<main role="main">
     <div class="container">
 
+            <h1 class="text-center pt-3">{{ blog.title }}</h1>
 
-        </div>
-        {% for job in jobs.all %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top"  src="{{ job.image.url }}" />
+        <p class="text-center pt-3">{{ blog.pub_date }}</p>
 
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        </div>
+            <img class = "img-fluid" src="{{ blog.image.url }}" />
+            <br />
+            <p>{{ blog.body }}</p>
 
-      </div>
+
+
     </div>
-  </div>
+
+
+
 
 </main>
 
